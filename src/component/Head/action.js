@@ -28,7 +28,7 @@ function extractCity(data, id) {
 
 export const fetchWeather = id => (dispatch) => {
     dispatch({type: 'FETCH', id});
-    return fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=862f6ea3d5a071f3e2ae81ba1ed2fb18&units=metric`)
+    return fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${id}&APPID=862f6ea3d5a071f3e2ae81ba1ed2fb18&units=metric`)
         .then(res => res.json())
         .then(json => {
             dispatch({type: 'SUCCESS', city: extractCity(json, id), id})
