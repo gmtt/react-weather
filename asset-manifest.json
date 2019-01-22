@@ -1,11 +1,11 @@
 {
-  "main.js": "/react-calculator/static/js/main.8eefa86c.chunk.js",
-  "main.js.map": "/react-calculator/static/js/main.8eefa86c.chunk.js.map",
-  "static/js/1.73b338b4.chunk.js": "/react-calculator/static/js/1.73b338b4.chunk.js",
-  "static/js/1.73b338b4.chunk.js.map": "/react-calculator/static/js/1.73b338b4.chunk.js.map",
-  "runtime~main.js": "/react-calculator/static/js/runtime~main.a2ecf2e6.js",
-  "runtime~main.js.map": "/react-calculator/static/js/runtime~main.a2ecf2e6.js.map",
-  "index.html": "/react-calculator/index.html",
-  "precache-manifest.2cec5b4bff1f5bf6287e34780ccf054b.js": "/react-calculator/precache-manifest.2cec5b4bff1f5bf6287e34780ccf054b.js",
-  "service-worker.js": "/react-calculator/service-worker.js"
+  "main.js": "/react-weather/static/js/main.17529b5a.chunk.js",
+  "main.js.map": "/react-weather/static/js/main.17529b5a.chunk.js.map",
+  "static/js/1.73b338b4.chunk.js": "/react-weather/static/js/1.73b338b4.chunk.js",
+  "static/js/1.73b338b4.chunk.js.map": "/react-weather/static/js/1.73b338b4.chunk.js.map",
+  "runtime~main.js": "/react-weather/static/js/runtime~main.8ad3cef1.js",
+  "runtime~main.js.map": "/react-weather/static/js/runtime~main.8ad3cef1.js.map",
+  "index.html": "/react-weather/index.html",
+  "precache-manifest.28dc03c1f46eedf0bf83a8636a891f9c.js": "/react-weather/precache-manifest.28dc03c1f46eedf0bf83a8636a891f9c.js",
+  "service-worker.js": "/react-weather/service-worker.js"
 }
