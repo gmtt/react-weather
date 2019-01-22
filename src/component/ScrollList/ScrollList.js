@@ -7,6 +7,9 @@ import {connect} from "react-redux";
 const styles = theme => ({
    gridList: {
        flexWrap: 'nowrap'
+   },
+   gridListTile: {
+      maxWidth: '300px'
    }
 });
 
@@ -19,7 +22,8 @@ class ScrollList extends React.Component{
                 let key = 0;
                 for(let info of city.data) {
                     cards.push(
-                        <GridListTile key={key++}>
+                        <GridListTile key={key++}
+                                      className={classes.gridListTile}>
                             <EntryCard
                                 description={info.weather_description}
                                 iconId={info.weather_icon}
@@ -38,7 +42,10 @@ class ScrollList extends React.Component{
         }
 
         return(
-            <GridList className={classes.gridList} cellHeight='auto'>
+            <GridList className={classes.gridList}
+                      cellHeight='auto'
+                      spacing={20}
+            >
                 {cards}
             </GridList>
         )

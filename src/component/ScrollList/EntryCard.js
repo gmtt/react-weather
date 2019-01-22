@@ -8,7 +8,8 @@ import {
     CardHeader,
     Collapse,
     List,
-    ListItem, ListItemText,
+    ListItem,
+    ListItemText,
     Typography
 } from "@material-ui/core";
 import * as PropTypes from "prop-types";
@@ -27,6 +28,10 @@ const WEATHER_ICON = {
     '50': 'static/fog.svg'
 };
 
+const styles = theme => ({
+
+});
+
 class EntryCard extends React.Component {
     constructor(props) {
         super(props);
@@ -43,36 +48,30 @@ class EntryCard extends React.Component {
 
     render() {
         return (
-            <Card>
+            <Card elevation={6}>
                 <CardHeader
                     title={this.props.description}
                     subheader={this.props.time}
                 />
                 <CardContent>
-                    <Grid container>
+                    <Grid container alignItems='center' justify='flex-start'>
                         <Grid item xs={4}>
                             <Avatar alt="weatherIcon" src={WEATHER_ICON[this.props.iconId.slice(0, 2)]}/>
                         </Grid>
                         <Grid item xs={8}>
-                            <Typography variant="body1" gutterBottom>
+                            <Typography variant="subtitle1"
+                                        gutterBottom>
                                 {this.props.temp_min}°C ~ {this.props.temp_max}°C
                             </Typography>
                         </Grid>
                     </Grid>
                 </CardContent>
                 <CardActions>
-                    <Button onClick={this.handleExpandClick}>
-                        {
-                            this.state.expanded ?
-                                <div>
-                                    <KeyboardArrowUp/>
-                                    Hide
-                                </div>:
-                                <div>
-                                <KeyboardArrowDown/>
-                                Show Details
-                                </div>
-                        }
+                    <Button onClick={this.handleExpandClick} fullWidth={true}>
+                        <Grid container alignItems='center' justify='center'>
+                            {this.state.expanded ? <KeyboardArrowUp/> : <KeyboardArrowDown/>}
+                            {this.state.expanded ? 'Hide' : 'Show Details'}
+                        </Grid>
                     </Button>
                 </CardActions>
                 <Collapse in={this.state.expanded} timeout="auto">
@@ -80,25 +79,25 @@ class EntryCard extends React.Component {
                         <ListItem>
                             <ListItemText
                                 primary='Pressure'
-                                secondary={this.props.pressure+'hPa'}
+                                secondary={this.props.pressure + 'hPa'}
                             />
                         </ListItem>
                         <ListItem>
                             <ListItemText
                                 primary='humidity'
-                                secondary={this.props.humidity+'%'}
+                                secondary={this.props.humidity + '%'}
                             />
                         </ListItem>
                         <ListItem>
                             <ListItemText
                                 primary='Wind Speed'
-                                secondary={this.props.wind_speed+'m/s'}
+                                secondary={this.props.wind_speed + 'm/s'}
                             />
                         </ListItem>
                         <ListItem>
                             <ListItemText
                                 primary='Wind Deg'
-                                secondary={this.props.wind_deg+'°'}
+                                secondary={this.props.wind_deg + '°'}
                             />
                         </ListItem>
                     </List>

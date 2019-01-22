@@ -5,7 +5,7 @@ import {fetchWeather} from "./action";
 import {connect} from "react-redux";
 import * as PropTypes from "prop-types";
 
-class CitySelector extends React.Component{
+class CitySelector extends React.Component {
     constructor(props) {
         super(props);
         this.props.fetchWeather(Object.values(CITY)[0]);
@@ -13,7 +13,7 @@ class CitySelector extends React.Component{
 
     render() {
         let cities = [];
-        for (let key in CITY){
+        for (let key in CITY) {
             cities.push(
                 <FormControlLabel
                     control={<Radio/>}
@@ -23,12 +23,12 @@ class CitySelector extends React.Component{
                 />
             )
         }
-        return(
+        return (
             <FormControl>
                 <RadioGroup
                     row
                     value={this.props.curCity.toString()}
-                    onChange={(e)=>{
+                    onChange={(e) => {
                         this.props.fetchWeather(Number(e.target.value))
                     }}>
                     {cities}
@@ -48,7 +48,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchWeather: (id)=>fetchWeather(id)(dispatch)
+    fetchWeather: (id) => fetchWeather(id)(dispatch)
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(CitySelector);
+export default connect(mapStateToProps, mapDispatchToProps)(
+    CitySelector
+);
