@@ -7,7 +7,7 @@ import {Typography, withStyles} from "@material-ui/core";
 const styles = theme => ({
     typography: {
         fontSize: '2rem',
-        margin: 'auto',
+        margin: '0'
     }
 });
 
@@ -16,7 +16,7 @@ function WeatherTitle(props) {
     return (
         <Typography gutterBottom align='center'
                     className={classes.typography}
-                    color={props.theme.lightGreen}
+                    color='inherit'
         >
             {props.curLocation}
         </Typography>

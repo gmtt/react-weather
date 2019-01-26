@@ -1,5 +1,5 @@
 import React from "react";
-import {FormControl, FormControlLabel, Radio, RadioGroup} from "@material-ui/core";
+import {FormControl, FormControlLabel, Radio, RadioGroup, withStyles} from "@material-ui/core";
 import {CITY} from "../location";
 import {fetchWeather} from "./action";
 import {connect} from "react-redux";

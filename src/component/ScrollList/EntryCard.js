@@ -28,9 +28,7 @@ const WEATHER_ICON = {
     '50': 'static/fog.svg'
 };
 
-const styles = theme => ({
-
-});
+const styles = theme => ({});
 
 class EntryCard extends React.Component {
     constructor(props) {
@@ -52,19 +50,15 @@ class EntryCard extends React.Component {
                 <CardHeader
                     title={this.props.description}
                     subheader={this.props.time}
+                    avatar={<Avatar alt="weatherIcon" src={WEATHER_ICON[this.props.iconId.slice(0, 2)]}/>}
                 />
                 <CardContent>
-                    <Grid container alignItems='center' justify='flex-start'>
-                        <Grid item xs={4}>
-                            <Avatar alt="weatherIcon" src={WEATHER_ICON[this.props.iconId.slice(0, 2)]}/>
-                        </Grid>
-                        <Grid item xs={8}>
-                            <Typography variant="subtitle1"
-                                        gutterBottom>
-                                {this.props.temp_min}°C ~ {this.props.temp_max}°C
-                            </Typography>
-                        </Grid>
-                    </Grid>
+                    <Typography variant="subtitle1"
+                                gutterBottom
+                                align='center'
+                    >
+                        {this.props.temp_min}°C ~ {this.props.temp_max}°C
+                    </Typography>
                 </CardContent>
                 <CardActions>
                     <Button onClick={this.handleExpandClick} fullWidth={true}>
